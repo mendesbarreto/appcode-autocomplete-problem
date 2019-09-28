@@ -21,9 +21,15 @@ final class ViewController: UIViewController {
         let button = UIButton(frame: .zero)
 
         //
-        // This part of code does not work with autocomplete from Appcode only xcode
+        // The method attributedTitle not showing on appcode autocomplete
         //
         button.rx.attributedTitle()
+
+        let label = UILabel()
+        //
+        // The property Text not showing on appcode autocomplete.
+        //
+        label.rx.text
     }
 }
 
