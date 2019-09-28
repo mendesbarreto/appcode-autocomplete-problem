@@ -16,10 +16,10 @@ final class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    
+
     func showProblemAutoCompleteAppCode() {
         let button = UIButton(frame: .zero)
-        
+
         //
         // This part of code does not work with autocomplete from Appcode only xcode
         //
