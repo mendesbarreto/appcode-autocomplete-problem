@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,8 @@
 		4FF56645233FD12B00DE9DA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FF56643233FD12B00DE9DA6 /* LaunchScreen.storyboard */; };
 		4FF56650233FD12B00DE9DA6 /* AppcodeAutoCompleteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF5664F233FD12B00DE9DA6 /* AppcodeAutoCompleteTests.swift */; };
 		4FF5665B233FD12B00DE9DA6 /* AppcodeAutoCompleteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF5665A233FD12B00DE9DA6 /* AppcodeAutoCompleteUITests.swift */; };
+		4FF5666D233FD44F00DE9DA6 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF5666B233FD44F00DE9DA6 /* RxSwift.framework */; };
+		4FF5666E233FD44F00DE9DA6 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF5666C233FD44F00DE9DA6 /* RxCocoa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		4FF56656233FD12B00DE9DA6 /* AppcodeAutoCompleteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppcodeAutoCompleteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FF5665A233FD12B00DE9DA6 /* AppcodeAutoCompleteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppcodeAutoCompleteUITests.swift; sourceTree = "<group>"; };
 		4FF5665C233FD12B00DE9DA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FF5666B233FD44F00DE9DA6 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		4FF5666C233FD44F00DE9DA6 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FF5666D233FD44F00DE9DA6 /* RxSwift.framework in Frameworks */,
+				4FF5666E233FD44F00DE9DA6 /* RxCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +87,7 @@
 				4FF5664E233FD12B00DE9DA6 /* AppcodeAutoCompleteTests */,
 				4FF56659233FD12B00DE9DA6 /* AppcodeAutoCompleteUITests */,
 				4FF56638233FD12900DE9DA6 /* Products */,
+				4FF5666A233FD44F00DE9DA6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +132,15 @@
 			path = AppcodeAutoCompleteUITests;
 			sourceTree = "<group>";
 		};
+		4FF5666A233FD44F00DE9DA6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4FF5666C233FD44F00DE9DA6 /* RxCocoa.framework */,
+				4FF5666B233FD44F00DE9DA6 /* RxSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,6 +148,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4FF5665F233FD12B00DE9DA6 /* Build configuration list for PBXNativeTarget "AppcodeAutoComplete" */;
 			buildPhases = (
+				4FF56669233FD3E800DE9DA6 /* Carthage */,
 				4FF56633233FD12900DE9DA6 /* Sources */,
 				4FF56634233FD12900DE9DA6 /* Frameworks */,
 				4FF56635233FD12900DE9DA6 /* Resources */,
@@ -250,6 +267,29 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4FF56669233FD3E800DE9DA6 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"$(SRCROOT)/AppcodeAutoComplete/inputPaths.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = Carthage;
+			outputFileListPaths = (
+				"$(SRCROOT)/AppcodeAutoComplete/outputPaths.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4FF56633233FD12900DE9DA6 /* Sources */ = {
@@ -432,7 +472,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WQVLGGBH98;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = AppcodeAutoComplete/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -440,6 +486,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.appcodeAutoComplete.AppcodeAutoComplete;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -449,7 +496,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WQVLGGBH98;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = AppcodeAutoComplete/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -457,6 +510,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.appcodeAutoComplete.AppcodeAutoComplete;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

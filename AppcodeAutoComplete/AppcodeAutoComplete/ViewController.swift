@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 final class ViewController: UIViewController {
 
@@ -16,7 +18,12 @@ final class ViewController: UIViewController {
     }
     
     func showProblemAutoCompleteAppCode() {
+        let button = UIButton(frame: .zero)
         
+        //
+        // This part of code does not work with autocomplete from Appcode only xcode
+        //
+        button.rx.attributedTitle()
     }
 }
 
